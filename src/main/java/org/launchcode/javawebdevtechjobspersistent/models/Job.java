@@ -1,9 +1,13 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 
-import javax.persistence.*;
+import javax.persistence.ManyToOne;
+import java.util.List;
 
 @Entity
-public class Job{
+public class Job extends AbstractEntity{
+
+    @ManyToOne
+    private Employer employer;
 
     @Id
     @GeneratedValue
@@ -14,13 +18,18 @@ public class Job{
     private String employer;
     private String skills;
 
-    public Job() {
+    public Job(int id) {
+        this.id = id;
     }
 
     public Job(String anEmployer, String someSkills) {
         super();
         this.employer = anEmployer;
         this.skills = someSkills;
+    }
+
+    public Job() {
+
     }
 
     // Getters and setters.
@@ -37,7 +46,7 @@ public class Job{
         return employer;
     }
 
-    public void setEmployer(String employer) {
+    public void setEmployer(Employer employer) {
         this.employer = employer;
     }
 
@@ -45,7 +54,7 @@ public class Job{
         return skills;
     }
 
-    public void setSkills(String skills) {
+    public void setSkills(List<Skill> skills) {
         this.skills = skills;
     }
 }

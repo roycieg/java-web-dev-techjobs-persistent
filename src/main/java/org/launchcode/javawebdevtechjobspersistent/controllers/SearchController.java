@@ -1,15 +1,15 @@
 package org.launchcode.javawebdevtechjobspersistent.controllers;
 
+import ch.qos.logback.classic.util.LogbackMDCAdapter;
 import org.launchcode.javawebdevtechjobspersistent.models.Job;
 import org.launchcode.javawebdevtechjobspersistent.models.JobData;
 import org.launchcode.javawebdevtechjobspersistent.models.data.JobRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-
-
-import static org.launchcode.javawebdevtechjobspersistent.controllers.ListController.columnChoices;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * Created by LaunchCode
@@ -20,6 +20,7 @@ public class SearchController {
 
     @Autowired
     private JobRepository jobRepository;
+    private LogbackMDCAdapter columnChoices;
 
     @RequestMapping("")
     public String search(Model model) {

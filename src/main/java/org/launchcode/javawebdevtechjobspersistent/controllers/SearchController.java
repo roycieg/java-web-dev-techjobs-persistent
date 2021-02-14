@@ -2,7 +2,7 @@ package org.launchcode.javawebdevtechjobspersistent.controllers;
 
 import ch.qos.logback.classic.util.LogbackMDCAdapter;
 import org.launchcode.javawebdevtechjobspersistent.models.Job;
-import org.launchcode.javawebdevtechjobspersistent.models.JobData;
+import org.launchcode.javawebdevtechjobspersistent.models.*;
 import org.launchcode.javawebdevtechjobspersistent.models.data.JobRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

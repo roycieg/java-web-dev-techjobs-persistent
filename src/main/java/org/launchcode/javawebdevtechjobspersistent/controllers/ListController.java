@@ -1,9 +1,8 @@
 package org.launchcode.javawebdevtechjobspersistent.controllers;
 
 
-import org.launchcode.javawebdevtechjobspersistent.models.Job;
-import org.launchcode.javawebdevtechjobspersistent.models.JobData;
-import org.launchcode.javawebdevtechjobspersistent.models.data.JobRepository;
+import org.launchcode.javawebdevtechjobspersistent.models.*;
+import org.launchcode.javawebdevtechjobspersistent.models.data.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,9 +35,6 @@ public class ListController {
 
     @Autowired
     private SkillRepository skillRepository;
-
-
-
 
     @RequestMapping("")
     public String list(Model model) {

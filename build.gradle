@@ -3,37 +3,29 @@ plugins {
 	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 	id 'java'
 }
-
 group = 'org.launchcode'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '13'
-
 configurations {
 	developmentOnly
 	runtimeClasspath {
 		extendsFrom developmentOnly
 	}
 }
-
 repositories {
 	mavenCentral()
 }
-
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-data-jpa')
-	compile 'mysql:mysql-connector-java'
-	compileOnly('org.projectlombok:lombok')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'android.arch.persistence.room:runtime:1.1.1'
-	annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	compile group: 'javax.persistence', name: 'javax.persistence-api', version: '2.2'
+	implementation 'mysql:mysql-connector-java'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 }
-
 test {
 	useJUnitPlatform()
 }

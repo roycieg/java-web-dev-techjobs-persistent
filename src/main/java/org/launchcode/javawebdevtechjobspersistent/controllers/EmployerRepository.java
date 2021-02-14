@@ -1,11 +1,8 @@
 package org.launchcode.javawebdevtechjobspersistent.controllers;
 
 import org.launchcode.javawebdevtechjobspersistent.models.Employer;
-
-import java.util.Optional;
-
-public interface EmployerRepository {
-    Object findAll();
-
-    Optional<Employer> findById(int employerId);
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+@Repository
+public interface EmployerRepository extends CrudRepository<Employer, Integer> {
 }

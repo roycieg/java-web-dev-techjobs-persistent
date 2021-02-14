@@ -1,17 +1,14 @@
 package org.launchcode.javawebdevtechjobspersistent.controllers;
 
-import com.fasterxml.classmate.util.ResolvedTypeCache;
+
 import org.launchcode.javawebdevtechjobspersistent.models.Job;
-import org.launchcode.javawebdevtechjobspersistent.models.data.EmployerRepository;
+import org.launchcode.javawebdevtechjobspersistent.models.JobData;
 import org.launchcode.javawebdevtechjobspersistent.models.data.JobRepository;
-import org.launchcode.javawebdevtechjobspersistent.models.data.SkillRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import org.launchcode.javawebdevtechjobspersistent.models.JobData
 
 import java.util.HashMap;
 
@@ -24,9 +21,9 @@ public class ListController {
 
     @Autowired
     private JobRepository jobRepository;
-    static HashMap<String, String> getColumnChoices = new HashMap<>();
+    static HashMap<String, String> columnChoices = new HashMap<>();
 
-    public ListController(ResolvedTypeCache columnChoices) {
+    public ListController() {
 
         columnChoices.put("all", "All");
         columnChoices.put("employer", "Employer");

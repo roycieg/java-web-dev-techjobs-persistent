@@ -36,10 +36,10 @@ public class SkillController {
     @PostMapping("add")
     public String processAddSkillForm(@ModelAttribute @Valid Skill newSkill, Errors errors, Model model) {
         if (errors.hasErrors()) {
-            model.addAttribute("title", "Add Skill");
+            return "skills/add";
         }
         skillRepository.save(newSkill);
-        return "redirect";
+        return "redirect:";
     }
     @GetMapping("view/{skillId}")
     public String displayViewSkill(Model model, @PathVariable int skillId) {
